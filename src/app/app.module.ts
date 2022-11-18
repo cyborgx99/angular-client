@@ -7,6 +7,9 @@ import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { AuthModule } from './auth/auth.module';
+import { HttpClientModule } from '@angular/common/http';
+import { reducers, metaReducers } from './reducers';
+import { ItemModule } from './item/item.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -15,11 +18,10 @@ import { AuthModule } from './auth/auth.module';
     AppRoutingModule,
     AuthModule,
     BrowserAnimationsModule,
-    StoreModule.forRoot({}, {}),
-    StoreDevtoolsModule.instrument({
-      maxAge: 25,
-      logOnly: environment.production,
-    }),
+    HttpClientModule,
+    ItemModule,
+    StoreModule.forRoot(reducers, { metaReducers }),
+    !environment.production ? StoreDevtoolsModule.instrument() : [],
   ],
   providers: [],
   bootstrap: [AppComponent],

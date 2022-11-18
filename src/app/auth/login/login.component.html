@@ -4,13 +4,25 @@
     <form class="login-form">
       <mat-form-field>
         <mat-label>Email</mat-label>
-        <input matInput placeholder="Email" value="Sushi" />
+        <input matInput placeholder="Email" (keyup)="onChangeEmail($event)" />
       </mat-form-field>
 
       <mat-form-field>
         <mat-label>Password</mat-label>
-        <input matInput placeholder="Password" value="Sushi" />
+        <input
+          matInput
+          placeholder="Password"
+          (keyup)="onChangePassword($event)"
+        />
       </mat-form-field>
+      <button
+        (click)="handleSubmit()"
+        mat-raised-button
+        color="primary"
+        type="button"
+      >
+        Login
+      </button>
     </form>
   </mat-card-content>
 </mat-card>
