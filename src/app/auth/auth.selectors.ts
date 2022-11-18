@@ -1,8 +1,10 @@
-import { createSelector } from '@ngrx/store';
+import { createFeatureSelector, createSelector } from '@ngrx/store';
 import { StoreState } from '../reducers';
+import { AuthState } from './reducers';
+
+export const selectAuthState = createFeatureSelector<AuthState>('auth');
 
 export const isLoggedIn = createSelector(
-  //@ts-ignore
-  (state: StoreState) => state['auth'],
+  selectAuthState,
   (auth) => !!auth.accessToken
 );

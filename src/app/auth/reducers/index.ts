@@ -25,5 +25,8 @@ export const authReducer = createReducer(
     return {
       accessToken: action.accessToken,
     };
+  }),
+  on(AuthActions.logout, (state, action) => {
+    return { ...initialAuthState };
   })
 );

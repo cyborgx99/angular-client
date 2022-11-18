@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit {
     this.email = (event.target as HTMLInputElement).value;
   }
 
-  handleSubmit() {
+  handleLogin() {
     this.authService
       .login(this.email, this.password)
       .pipe(

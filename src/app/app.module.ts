@@ -10,9 +10,18 @@ import { AuthModule } from './auth/auth.module';
 import { HttpClientModule } from '@angular/common/http';
 import { reducers, metaReducers } from './reducers';
 import { ItemModule } from './item/item.module';
+import { PageLayoutComponent } from './common/page-layout/page-layout.component';
+import { HeaderComponent } from './common/header/header.component';
+import { FooterComponent } from './common/footer/footer.component';
+import { MaterialModule } from './material-module';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [
+    AppComponent,
+    PageLayoutComponent,
+    HeaderComponent,
+    FooterComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -22,6 +31,7 @@ import { ItemModule } from './item/item.module';
     ItemModule,
     StoreModule.forRoot(reducers, { metaReducers }),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
+    MaterialModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
