@@ -1,0 +1,15 @@
+.header {
+  padding: 10px;
+  min-height: 3.5rem;
+  display: flex;
+  align-items: center;
+  background-color: lightgreen;
+
+  &-logout {
+    margin-left: auto;
+  }
+}
+
+:host ::ng-deep h2 {
+  margin: 0;
+}
