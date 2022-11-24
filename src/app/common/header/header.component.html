@@ -1,5 +1,12 @@
 <div class="header">
   <h2>Stuff</h2>
+  <a
+    *ngIf="isLoggedIn$ | async"
+    class="link"
+    routerLink="/items"
+    routerLinkActive="link-active"
+    >Items</a
+  >
   <button
     *ngIf="isLoggedIn$ | async"
     class="header-logout"

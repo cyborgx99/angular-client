@@ -13,3 +13,15 @@
 :host ::ng-deep h2 {
   margin: 0;
 }
+
+.link {
+  text-decoration: none;
+  color: black;
+  padding: 5px;
+  margin: 5px;
+  border-radius: 4px;
+
+  &-active {
+    background-color: lightblue;
+  }
+}
